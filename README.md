@@ -18,8 +18,6 @@
 
 * Tiny in size
 
-* Minimum Android SDK: **14**
-
 * Support [**Kotlin**](http://kotlinlang.org) and [**Java**](https://www.java.com)
 
   ​
@@ -92,30 +90,32 @@
   // Kotlin sample
        mBinding.viewPager.setEasyPagerAdapter(mPageList)
                   .map<ImageModel>(R.layout.item_view_pager_image, BR.item)
-                  .map<PersonDetail, ItemViewPagerPersonDetailBinding>(R.layout.item_view_pager_person_detail, BR.person)
+                  .map<PersonDetail, ItemViewPagerPersonDetailBinding>
+				  (R.layout.item_view_pager_person_detail, BR.person)
                   { itemBind ->
                       itemBind.btnSubmit.setOnClickListener {
-                          Toast.makeText(this@KotlinDemoActivity,
-                                  "Submit Button Clicked in the Person ${itemBind.person?.name} Page",
-                                  Toast.LENGTH_LONG).show()
+                       Toast.makeText(this@KotlinDemoActivity,
+                       "Submit Button Clicked in the Person ${itemBind.person?.name} Page",
+                             Toast.LENGTH_LONG).show()
                       }
                   }
   ```
   ```java
   // Java sample
   new EasyPagerAdapter(mPageList)
-                  .map(ImageModel.class, R.layout.item_view_pager_image, BR.item)
-                  .map(PersonDetail.class,
-                          R.layout.item_view_pager_person_detail,
-                          BR.person, new PagerCallBack<ItemViewPagerPersonDetailBinding>() {
-                              @Override
-                              public void onBind(final ItemViewPagerPersonDetailBinding itemBind) {
-                                  itemBind.btnSubmit.setOnClickListener(new View.OnClickListener() {
-                                      @Override
-                                      public void onClick(View view) {
-                                          Toast.makeText(JavaDemoActivity.this,
-                                                  "Submit Button Clicked in the Person " + itemBind.getPerson().getName() +
-                                                          " Page", Toast.LENGTH_LONG).show();
+            .map(ImageModel.class, R.layout.item_view_pager_image, BR.item)
+            .map(PersonDetail.class,
+                R.layout.item_view_pager_person_detail,
+                BR.person, new PagerCallBack<ItemViewPagerPersonDetailBinding>() {
+                    @Override
+                    public void onBind(final ItemViewPagerPersonDetailBinding itemBind) {
+                       itemBind.btnSubmit.setOnClickListener(new View.OnClickListener() {
+                         @Override
+                         public void onClick(View view) {
+                          Toast.makeText(JavaDemoActivity.this,
+                           "Submit Button Clicked in the Person " + 
+						   itemBind.getPerson().getName() +
+                             " Page", Toast.LENGTH_LONG).show();
                                       }
                                   });
                               }
@@ -125,13 +125,15 @@
   ### **set fragment pager adapter**
 
   ```kotlin
-   mBinding.viewPager.setEasyFragmentPagerAdapter(supportFragmentManager, arrayListOf(FragmentA(), FragmentB()))
+   mBinding.viewPager.setEasyFragmentPagerAdapter
+   (supportFragmentManager, arrayListOf(FragmentA(), FragmentB()))
   ```
 
   ### **set fragment state pager adapter**
 
   ```kotlin
-   mBinding.viewPager.setEasyFragmentStatePagerAdapter(supportFragmentManager, arrayListOf(FragmentA(), FragmentB()))
+   mBinding.viewPager.setEasyFragmentStatePagerAdapter
+   (supportFragmentManager, arrayListOf(FragmentA(), FragmentB()))
   ```
   **Check out the wiki for detailed documentation and usage examples.**
 
