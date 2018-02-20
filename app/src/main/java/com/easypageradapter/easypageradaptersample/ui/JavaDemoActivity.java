@@ -24,7 +24,7 @@ public class JavaDemoActivity extends AppCompatActivity {
 
     private ActivityJavaDemoBinding mBinding;
 
-    private ArrayList<ImageModel> mImageList = new ArrayList<ImageModel>();
+    private ArrayList<ImageModel> mImageList = new ArrayList<>();
 
     private ArrayList<Object> mPageList = new ArrayList<>();
 
@@ -52,21 +52,12 @@ public class JavaDemoActivity extends AppCompatActivity {
 
         /*Check all the cases on by one by uncommenting the code*/
 
-        // set the adapter to view pager
-        /*Here BR.item is the Binding Resource variable which you declared in your layout
-        * here you pass the BR.item as second argument with your list that means your all the layout have the same name of your
-        * data variable
-        * /
+        // Here BR.item is the Binding Resource variable which you declared in your layout
 
         //setSimplePager();
 
         // what if need on clicks
-        /*setPagerWithOnClicks();*/
-
-        /* This is the demo of pager with different layout you get pages according to the oder of your model in the list
-        * Here If you want to set the different name for each data variable then you have to pass the Binding Resource
-        * variable like this below
-        */
+        //setPagerWithOnClicks();
 
         // data variable in different layout with same name
         //setPagerWithDifferentLayouts();

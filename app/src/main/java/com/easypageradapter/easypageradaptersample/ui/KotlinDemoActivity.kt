@@ -60,13 +60,8 @@ class KotlinDemoActivity : AppCompatActivity() {
 
     private fun initViews() {
         // Check all the cases by calling ay of the function
-        // set the adapter to view pager
 
-        /**
-         * Here BR.item is the Binding Resource variable which you declared in your layout
-         * here you pass the BR.item as second argument with your list that means your all the layout have the same name of your
-         * data variable
-         */
+        //Here BR.item is the Binding Resource variable which you declared in your layout
 
         //with extension function
         /*setPagerWithExtensionFunction()*/
@@ -76,12 +71,6 @@ class KotlinDemoActivity : AppCompatActivity() {
 
         // what if need on clicks
         /*setPagerWithOnClicks()*/
-
-        /**pages with different layouts
-         * this is the demo of pager with different layout you get pages according to the oder of your model in the list
-         * Here If you want to set the different name for each data variable then you have to pass the Binding Resource
-         * variable like this below
-         */
 
         // data variable in different layout with same name
         /*setPagerWithDifferentLayouts()*/
