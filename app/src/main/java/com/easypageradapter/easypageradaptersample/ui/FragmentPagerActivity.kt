@@ -33,6 +33,7 @@ class FragmentPagerActivity : AppCompatActivity() {
         /*new EasyFragmentStatePagerAdapter(supportFragmentManager, arrayListOf(FragmentA(), FragmentB())).into(mBinding.viewPager);*/
 
         /*If You are working with TabLayout then pageTitle() method is available to add tab name*/
+        /*If You want to change page width then pageWidth() method is available*/
     }
 
     private fun setFragmentStatePagerAdapterKotlinCode() {
