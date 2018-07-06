@@ -392,6 +392,11 @@ class EasyFragmentPagerAdapter(private val supportFragmentManager: FragmentManag
     override fun getItem(position: Int): Fragment {
         return mFragmentList[position]
     }
+    
+    // please notify adapter after call this function
+    fun setItem(position: Int,fragment:Fragment) {
+        mFragmentList[position] = fragment
+    }
 
     override fun getCount(): Int {
         return mFragmentList.size
@@ -459,6 +464,11 @@ class EasyFragmentStatePagerAdapter(private val supportFragmentManager: Fragment
 
     override fun getItem(position: Int): Fragment {
         return mFragmentList[position]
+    }
+    
+     // please notify adapter after call this function
+    fun setItem(position: Int,fragment:Fragment) {
+        mFragmentList[position] = fragment
     }
 
     override fun getCount(): Int {
