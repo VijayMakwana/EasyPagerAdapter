@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">EasyPagerAdapterSample</string>
+
+    <array name="titles">
+        <item>Item1</item>
+        <item>Item2</item>
+        <item>Item3</item>
+        <item>Item4</item>
+        <item>Item5</item>
+        <item>Item6</item>
+    </array>
 </resources>

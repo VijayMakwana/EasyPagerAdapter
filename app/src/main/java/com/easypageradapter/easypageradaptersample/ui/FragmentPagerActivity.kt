@@ -37,10 +37,10 @@ class FragmentPagerActivity : AppCompatActivity() {
     }
 
     private fun setFragmentStatePagerAdapterKotlinCode() {
-        mBinding.viewPager.setEasyFragmentStatePagerAdapter(supportFragmentManager, arrayListOf(FragmentA(), FragmentB()))
+        mBinding.viewPager.setEasyFragmentStatePagerAdapter(supportFragmentManager, listOf(FragmentA(), FragmentB()))
     }
 
     private fun setFragmentPagerAdapterKotlinCode() {
-        mBinding.viewPager.setEasyFragmentPagerAdapter(supportFragmentManager, arrayListOf(FragmentA(), FragmentB()))
+        mBinding.viewPager.setEasyFragmentPagerAdapter(supportFragmentManager, listOf(FragmentA(), FragmentB()))
     }
 }

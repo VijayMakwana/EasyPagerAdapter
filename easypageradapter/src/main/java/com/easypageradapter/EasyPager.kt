@@ -260,8 +260,24 @@ class EasyPagerAdapter(private var pageModelList: List<Any>) : PagerAdapter() {
      *
      * @return instance of EasyPagerAdapter
      */
-    fun pageTitle(pageTitleList: ArrayList<String>): EasyPagerAdapter {
-        titleList = pageTitleList
+    fun pageTitle(pageTitleList: List<String>): EasyPagerAdapter {
+        val arrList = ArrayList<String>(pageTitleList.size)
+        arrList.addAll(pageTitleList)
+        titleList = arrList
+        return this
+    }
+
+    /**
+     * it takes [pageTitleList] and set the title to appropriate page
+     *
+     * @property pageTitleList list of title
+     *
+     * @return instance of EasyPagerAdapter
+     */
+    fun pageTitle(pageTitleList: Array<String>): EasyPagerAdapter {
+        val arrList = ArrayList<String>(pageTitleList.size)
+        arrList.addAll(pageTitleList)
+        titleList = arrList
         return this
     }
 
@@ -351,8 +367,10 @@ class EasyPagerAdapter(private var pageModelList: List<Any>) : PagerAdapter() {
  *
  * @return instance of EasyFragmentPagerAdapter class
  */
-fun ViewPager.setEasyFragmentPagerAdapter(supportFragmentManager: FragmentManager, fragmentList: ArrayList<Fragment>): EasyFragmentPagerAdapter {
-    val easyFragmentPager = EasyFragmentPagerAdapter(supportFragmentManager, fragmentList)
+fun ViewPager.setEasyFragmentPagerAdapter(supportFragmentManager: FragmentManager, fragmentList: List<Fragment>): EasyFragmentPagerAdapter {
+    val arrList = ArrayList<Fragment>(fragmentList.size)
+    arrList.addAll(fragmentList)
+    val easyFragmentPager = EasyFragmentPagerAdapter(supportFragmentManager, arrList)
     this.adapter = easyFragmentPager
     return easyFragmentPager
 }
@@ -367,8 +385,10 @@ fun ViewPager.setEasyFragmentPagerAdapter(supportFragmentManager: FragmentManage
  *
  * @return instance of EasyFragmentStatePagerAdapter class
  */
-fun ViewPager.setEasyFragmentStatePagerAdapter(supportFragmentManager: FragmentManager, fragmentList: ArrayList<Fragment>): EasyFragmentStatePagerAdapter {
-    val easyFragmentStatePager = EasyFragmentStatePagerAdapter(supportFragmentManager, fragmentList)
+fun ViewPager.setEasyFragmentStatePagerAdapter(supportFragmentManager: FragmentManager, fragmentList: List<Fragment>): EasyFragmentStatePagerAdapter {
+    val arrList = ArrayList<Fragment>(fragmentList.size)
+    arrList.addAll(fragmentList)
+    val easyFragmentStatePager = EasyFragmentStatePagerAdapter(supportFragmentManager, arrList)
     this.adapter = easyFragmentStatePager
 
     return easyFragmentStatePager
@@ -432,8 +452,24 @@ class EasyFragmentPagerAdapter(private val supportFragmentManager: FragmentManag
      *
      * @return instance of EasyPagerAdapter
      */
-    fun pageTitle(pageTitleList: ArrayList<String>): EasyFragmentPagerAdapter {
-        titleList = pageTitleList
+    fun pageTitle(pageTitleList: List<String>): EasyFragmentPagerAdapter {
+        val arrList = ArrayList<String>(pageTitleList.size)
+        arrList.addAll(pageTitleList)
+        titleList = arrList
+        return this
+    }
+
+    /**
+     * it takes [pageTitleList] and set the title to appropriate page
+     *
+     * @property pageTitleList list of title
+     *
+     * @return instance of EasyPagerAdapter
+     */
+    fun pageTitle(pageTitleList: Array<String>): EasyFragmentPagerAdapter {
+        val arrList = ArrayList<String>(pageTitleList.size)
+        arrList.addAll(pageTitleList)
+        titleList = arrList
         return this
     }
 
@@ -504,8 +540,24 @@ class EasyFragmentStatePagerAdapter(private val supportFragmentManager: Fragment
      *
      * @return instance of EasyPagerAdapter
      */
-    fun pageTitle(pageTitleList: ArrayList<String>): EasyFragmentStatePagerAdapter {
-        titleList = pageTitleList
+    fun pageTitle(pageTitleList: List<String>): EasyFragmentStatePagerAdapter {
+        val arrList = ArrayList<String>(pageTitleList.size)
+        arrList.addAll(pageTitleList)
+        titleList = arrList
+        return this
+    }
+
+    /**
+     * it takes [pageTitleList] and set the title to appropriate page
+     *
+     * @property pageTitleList list of title
+     *
+     * @return instance of EasyPagerAdapter
+     */
+    fun pageTitle(pageTitleList: Array<String>): EasyFragmentStatePagerAdapter {
+        val arrList = ArrayList<String>(pageTitleList.size)
+        arrList.addAll(pageTitleList)
+        titleList = arrList
         return this
     }
 

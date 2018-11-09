@@ -19,13 +19,13 @@ class KotlinDemoActivity : AppCompatActivity() {
 
     private lateinit var mBinding: ActivityKotlinDemoBinding
 
-    private val mImageList = arrayListOf<ImageModel>(
+    private val mImageList = listOf<ImageModel>(
             ImageModel(R.drawable.image_1, "Android"),
             ImageModel(R.drawable.image_2, "Google Android"),
             ImageModel(R.drawable.image_3, "Happy Android"),
             ImageModel(R.drawable.image_4, "Noty Android"))
 
-    private val mPageList = arrayListOf<Any>(
+    private val mPageList = listOf<Any>(
             ImageModel(
                     image = R.drawable.image_1,
                     name = "Android"),
@@ -104,7 +104,7 @@ class KotlinDemoActivity : AppCompatActivity() {
         mBinding.viewPager.setEasyPagerAdapter(mPageList, BR.item)
                 .map<ImageModel>(R.layout.item_view_pager_image)
                 .map<PersonDetail>(itemPersonType, BR.person)
-                .pageTitle(arrayListOf("Item1", "Item2", "Item3", "Item4", "Item5", "Item6"))
+                .pageTitle(resources.getStringArray(R.array.titles))
     }
 
     private fun setPagerWithDifferentLayoutWithOnClicks() {

@@ -159,4 +159,5 @@ public class JavaDemoActivity extends AppCompatActivity {
                 .map(ImageModel.class, R.layout.item_view_pager_image)
                 .into(mBinding.viewPager);
     }
+
 }
