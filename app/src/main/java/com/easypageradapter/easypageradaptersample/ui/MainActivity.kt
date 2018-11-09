@@ -1,9 +1,9 @@
 package com.easypageradapter.easypageradaptersample.ui
 
 import android.content.Intent
-import android.databinding.DataBindingUtil
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.easypageradapter.easypageradaptersample.R
 import com.easypageradapter.easypageradaptersample.databinding.ActivityMainBinding
 

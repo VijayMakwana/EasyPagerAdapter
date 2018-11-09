@@ -1,8 +1,7 @@
 package com.easypageradapter.easypageradaptersample.util
 
-import android.databinding.BindingAdapter
-import android.graphics.drawable.Drawable
 import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 
 
 @BindingAdapter("imageDrawable")

@@ -1,19 +1,17 @@
 package com.easypageradapter
 
-import android.databinding.DataBindingUtil
-import android.databinding.ViewDataBinding
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
-import android.support.v4.app.FragmentStatePagerAdapter
-import android.support.v4.view.PagerAdapter
-import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import java.lang.NullPointerException
-import java.util.*
-import android.support.v4.util.ArrayMap
+import androidx.collection.ArrayMap
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
+import androidx.fragment.app.FragmentStatePagerAdapter
+import androidx.viewpager.widget.PagerAdapter
+import androidx.viewpager.widget.ViewPager
 
 
 /**
@@ -289,8 +287,8 @@ class EasyPagerAdapter(private var pageModelList: List<Any>) : PagerAdapter() {
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
-        return if (titleList.size == 0 || titleList[position].isEmpty()) {
-            ""
+        return if (titleList.size <= position || titleList[position].isEmpty()) {
+            super.getPageTitle(position)
         } else {
             titleList[position]
         }
@@ -331,7 +329,7 @@ class EasyPagerAdapter(private var pageModelList: List<Any>) : PagerAdapter() {
     }
 
     override fun isViewFromObject(view: View, any: Any): Boolean {
-        return view == any as ViewGroup
+        return view == any
     }
 
     override fun getCount(): Int {
@@ -339,7 +337,7 @@ class EasyPagerAdapter(private var pageModelList: List<Any>) : PagerAdapter() {
     }
 
     override fun destroyItem(container: ViewGroup, position: Int, any: Any) {
-        container.removeView(any as ViewGroup)
+        container.removeView(any as View?)
     }
 }
 
@@ -353,7 +351,7 @@ class EasyPagerAdapter(private var pageModelList: List<Any>) : PagerAdapter() {
  *
  * @return instance of EasyFragmentPagerAdapter class
  */
-fun ViewPager.setEasyFragmentPagerAdapter(supportFragmentManager: FragmentManager, fragmentList: List<Fragment>): EasyFragmentPagerAdapter {
+fun ViewPager.setEasyFragmentPagerAdapter(supportFragmentManager: FragmentManager, fragmentList: ArrayList<Fragment>): EasyFragmentPagerAdapter {
     val easyFragmentPager = EasyFragmentPagerAdapter(supportFragmentManager, fragmentList)
     this.adapter = easyFragmentPager
     return easyFragmentPager
@@ -369,7 +367,7 @@ fun ViewPager.setEasyFragmentPagerAdapter(supportFragmentManager: FragmentManage
  *
  * @return instance of EasyFragmentStatePagerAdapter class
  */
-fun ViewPager.setEasyFragmentStatePagerAdapter(supportFragmentManager: FragmentManager, fragmentList: List<Fragment>): EasyFragmentStatePagerAdapter {
+fun ViewPager.setEasyFragmentStatePagerAdapter(supportFragmentManager: FragmentManager, fragmentList: ArrayList<Fragment>): EasyFragmentStatePagerAdapter {
     val easyFragmentStatePager = EasyFragmentStatePagerAdapter(supportFragmentManager, fragmentList)
     this.adapter = easyFragmentStatePager
 
@@ -384,17 +382,17 @@ fun ViewPager.setEasyFragmentStatePagerAdapter(supportFragmentManager: FragmentM
  *
  * @constructor create instance of EasyFragmentPagerAdapter
  */
-class EasyFragmentPagerAdapter(private val supportFragmentManager: FragmentManager, private val fragmentList: List<Fragment>) : FragmentPagerAdapter(supportFragmentManager) {
-    private val mFragmentList: List<Fragment> = fragmentList
+class EasyFragmentPagerAdapter(private val supportFragmentManager: FragmentManager, private val fragmentList: ArrayList<Fragment>) : FragmentPagerAdapter(supportFragmentManager) {
+    private val mFragmentList = fragmentList
     private var titleList: ArrayList<String> = arrayListOf()
     private var mPageWidth: Float = 1.0F
 
     override fun getItem(position: Int): Fragment {
         return mFragmentList[position]
     }
-    
+
     // please notify adapter after call this function
-    fun setItem(position: Int,fragment:Fragment) {
+    fun setItem(position: Int, fragment: Fragment) {
         mFragmentList[position] = fragment
     }
 
@@ -404,8 +402,8 @@ class EasyFragmentPagerAdapter(private val supportFragmentManager: FragmentManag
 
 
     override fun getPageTitle(position: Int): CharSequence? {
-        return if (titleList.size == 0 || titleList[position].isEmpty()) {
-            ""
+        return if (titleList.size <= position || titleList[position].isEmpty()) {
+            super.getPageTitle(position)
         } else {
             titleList[position]
         }
@@ -457,17 +455,17 @@ class EasyFragmentPagerAdapter(private val supportFragmentManager: FragmentManag
  *
  * @constructor create instance of EasyFragmentStatePagerAdapter
  */
-class EasyFragmentStatePagerAdapter(private val supportFragmentManager: FragmentManager, private val fragmentList: List<Fragment>) : FragmentStatePagerAdapter(supportFragmentManager) {
-    private val mFragmentList: List<Fragment> = fragmentList
+class EasyFragmentStatePagerAdapter(private val supportFragmentManager: FragmentManager, private val fragmentList: ArrayList<Fragment>) : FragmentStatePagerAdapter(supportFragmentManager) {
+    private val mFragmentList = fragmentList
     private var titleList: ArrayList<String> = arrayListOf()
     private var mPageWidth: Float = 1.0F
 
     override fun getItem(position: Int): Fragment {
         return mFragmentList[position]
     }
-    
-     // please notify adapter after call this function
-    fun setItem(position: Int,fragment:Fragment) {
+
+    // please notify adapter after call this function
+    fun setItem(position: Int, fragment: Fragment) {
         mFragmentList[position] = fragment
     }
 
@@ -476,8 +474,8 @@ class EasyFragmentStatePagerAdapter(private val supportFragmentManager: Fragment
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
-        return if (titleList.size == 0 || titleList[position].isEmpty()) {
-            ""
+        return if (titleList.size <= position || titleList[position].isEmpty()) {
+            super.getPageTitle(position)
         } else {
             titleList[position]
         }

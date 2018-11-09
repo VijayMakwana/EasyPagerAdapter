@@ -1,9 +1,9 @@
 package com.easypageradapter.easypageradaptersample.ui
 
-import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.easypageradapter.EasyPagerAdapter
 import com.easypageradapter.ItemType
 import com.easypageradapter.easypageradaptersample.BR
@@ -89,20 +89,22 @@ class KotlinDemoActivity : AppCompatActivity() {
          * pageTitle()  if want to add page title
          * pageWidth() If want to change page width
          */
+        mBinding.tabLayout.setupWithViewPager(mBinding.viewPager)
     }
 
     private fun setPagerWithItemTypes() {
-        val itemPersonType = ItemType<ItemViewPagerPersonDetailBinding>(R.layout.item_view_pager_person_detail, { itemBind ->
+        val itemPersonType = ItemType<ItemViewPagerPersonDetailBinding>(R.layout.item_view_pager_person_detail) { itemBind ->
             itemBind.btnSubmit.setOnClickListener {
                 Toast.makeText(this@KotlinDemoActivity,
                         "Submit Button Clicked in the Person ${itemBind.person?.name} Page",
                         Toast.LENGTH_LONG).show()
             }
-        })
+        }
 
         mBinding.viewPager.setEasyPagerAdapter(mPageList, BR.item)
                 .map<ImageModel>(R.layout.item_view_pager_image)
                 .map<PersonDetail>(itemPersonType, BR.person)
+                .pageTitle(arrayListOf("Item1", "Item2", "Item3", "Item4", "Item5", "Item6"))
     }
 
     private fun setPagerWithDifferentLayoutWithOnClicks() {

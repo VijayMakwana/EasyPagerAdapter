@@ -1,15 +1,12 @@
 package com.easypageradapter.easypageradaptersample.ui;
 
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
+import com.easypageradapter.EasyPagerAdapter;
 import com.easypageradapter.ItemType;
 import com.easypageradapter.PagerCallBack;
-import com.easypageradapter.EasyPagerAdapter;
 import com.easypageradapter.easypageradaptersample.BR;
 import com.easypageradapter.easypageradaptersample.R;
 import com.easypageradapter.easypageradaptersample.data.ImageModel;
@@ -19,6 +16,10 @@ import com.easypageradapter.easypageradaptersample.databinding.ItemViewPagerImag
 import com.easypageradapter.easypageradaptersample.databinding.ItemViewPagerPersonDetailBinding;
 
 import java.util.ArrayList;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 public class JavaDemoActivity extends AppCompatActivity {
 
@@ -141,13 +142,13 @@ public class JavaDemoActivity extends AppCompatActivity {
                 .map(ImageModel.class, R.layout.item_view_pager_image, new PagerCallBack<ItemViewPagerImageBinding>() {
                     @Override
                     public void onBind(final ItemViewPagerImageBinding itemBind) {
-                        itemBind.textImage.setOnClickListener(new View.OnClickListener() {
+                        /*itemBind.textImage.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
                                 // here itemBind is your layout binding instance with the help of you can get all the layout components
                                 Toast.makeText(JavaDemoActivity.this, itemBind.getItem().getName(), Toast.LENGTH_SHORT).show();
                             }
-                        });
+                        });*/
                     }
                 })
                 .into(mBinding.viewPager);
