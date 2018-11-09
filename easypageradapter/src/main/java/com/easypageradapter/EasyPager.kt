@@ -411,15 +411,9 @@ class EasyFragmentPagerAdapter(private val supportFragmentManager: FragmentManag
         return mFragmentList[position]
     }
 
-    // please notify adapter after call this function
-    fun setItem(position: Int, fragment: Fragment) {
-        mFragmentList[position] = fragment
-    }
-
     override fun getCount(): Int {
         return mFragmentList.size
     }
-
 
     override fun getPageTitle(position: Int): CharSequence? {
         return if (titleList.size <= position || titleList[position].isEmpty()) {
@@ -498,11 +492,6 @@ class EasyFragmentStatePagerAdapter(private val supportFragmentManager: Fragment
 
     override fun getItem(position: Int): Fragment {
         return mFragmentList[position]
-    }
-
-    // please notify adapter after call this function
-    fun setItem(position: Int, fragment: Fragment) {
-        mFragmentList[position] = fragment
     }
 
     override fun getCount(): Int {

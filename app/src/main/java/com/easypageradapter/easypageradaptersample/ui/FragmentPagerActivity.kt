@@ -41,6 +41,7 @@ class FragmentPagerActivity : AppCompatActivity() {
     }
 
     private fun setFragmentPagerAdapterKotlinCode() {
-        mBinding.viewPager.setEasyFragmentPagerAdapter(supportFragmentManager, listOf(FragmentA(), FragmentB()))
+        mBinding.viewPager.setEasyFragmentPagerAdapter(supportFragmentManager, listOf(FragmentA(), FragmentB(),
+                FragmentC(), FragmentD()))
     }
 }
