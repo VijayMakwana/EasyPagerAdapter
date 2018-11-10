@@ -25,6 +25,9 @@
   ​
 
   ## Setup
+  
+  Migrate the project to AndroidX, do the following steps for migration
+  Refactor -> Migrate to AndroidX
 
   ### Gradle
 
@@ -48,7 +51,7 @@
   }
   
   dependencies {
-  	implementation 'com.github.VijayMakwana:EasyPagerAdapter:1.0.2'
+  	implementation 'com.github.VijayMakwana:EasyPagerAdapter:1.0.3'
   }
   ```
 
