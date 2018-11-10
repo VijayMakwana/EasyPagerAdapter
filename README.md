@@ -20,6 +20,8 @@
 
 * Support [**Kotlin**](http://kotlinlang.org) and [**Java**](https://www.java.com)
 
+* Support AndroidX
+
   ​
 
   ## Setup
@@ -39,15 +41,14 @@
 
   ```
   // apply plugin: 'kotlin-kapt' // this line only for Kotlin projects
-
+  
   android {
       ...
       dataBinding.enabled true 
   }
-
+  
   dependencies {
-  	compile 'com.github.VijayMakwana:EasyPagerAdapter:1.0.0'
-      // kapt 'com.android.databinding:compiler:GRADLE_PLUGIN_VERSION' // this line only for Kotlin projects
+  	implementation 'com.github.VijayMakwana:EasyPagerAdapter:1.0.2'
   }
   ```
 
@@ -57,7 +58,7 @@
 
   ```xml
   <layout xmlns:android="http://schemas.android.com/apk/res/android">
-
+  
       <data>
           <variable name="item"
                     type="com.easypageradapter.easypageradaptersample.data.PersonDetail"/>
@@ -91,7 +92,7 @@
        mBinding.viewPager.setEasyPagerAdapter(mPageList)
                   .map<ImageModel>(R.layout.item_view_pager_image, BR.item)
                   .map<PersonDetail, ItemViewPagerPersonDetailBinding>
-				  (R.layout.item_view_pager_person_detail, BR.person)
+  			  (R.layout.item_view_pager_person_detail, BR.person)
                   { itemBind ->
                       itemBind.btnSubmit.setOnClickListener {
                        Toast.makeText(this@KotlinDemoActivity,
@@ -114,7 +115,7 @@
                          public void onClick(View view) {
                           Toast.makeText(JavaDemoActivity.this,
                            "Submit Button Clicked in the Person " + 
-						   itemBind.getPerson().getName() +
+  					   itemBind.getPerson().getName() +
                              " Page", Toast.LENGTH_LONG).show();
                                       }
                                   });
@@ -126,14 +127,14 @@
 
   ```kotlin
    mBinding.viewPager.setEasyFragmentPagerAdapter
-   (supportFragmentManager, arrayListOf(FragmentA(), FragmentB()))
+   (supportFragmentManager, listOf(FragmentA(), FragmentB()))
   ```
 
   ### **set fragment state pager adapter**
 
   ```kotlin
    mBinding.viewPager.setEasyFragmentStatePagerAdapter
-   (supportFragmentManager, arrayListOf(FragmentA(), FragmentB()))
+   (supportFragmentManager, listOf(FragmentA(), FragmentB()))
   ```
   **Check out the wiki for detailed documentation and usage examples.**
 
