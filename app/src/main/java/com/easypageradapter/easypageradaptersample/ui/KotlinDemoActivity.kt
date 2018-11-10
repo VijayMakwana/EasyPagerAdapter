@@ -89,7 +89,6 @@ class KotlinDemoActivity : AppCompatActivity() {
          * pageTitle()  if want to add page title
          * pageWidth() If want to change page width
          */
-        mBinding.tabLayout.setupWithViewPager(mBinding.viewPager)
     }
 
     private fun setPagerWithItemTypes() {
@@ -104,7 +103,6 @@ class KotlinDemoActivity : AppCompatActivity() {
         mBinding.viewPager.setEasyPagerAdapter(mPageList, BR.item)
                 .map<ImageModel>(R.layout.item_view_pager_image)
                 .map<PersonDetail>(itemPersonType, BR.person)
-                .pageTitle(resources.getStringArray(R.array.titles))
     }
 
     private fun setPagerWithDifferentLayoutWithOnClicks() {
