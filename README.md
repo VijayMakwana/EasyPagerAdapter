@@ -1,31 +1,35 @@
+
+
 # EasyPagerAdapter [![](https://jitpack.io/v/VijayMakwana/EasyPagerAdapter.svg)](https://jitpack.io/#VijayMakwana/EasyPagerAdapter) [![License](https://img.shields.io/badge/License-Apache%202.0-orange.svg)](https://opensource.org/licenses/Apache-2.0)
 
 **Easiest android ViewPager adapter implementation, Don't write ViewPager adapter ever again**
 
-* Based on [**Android Data Binding**](https://developer.android.com/topic/libraries/data-binding/index.html)
+- Based on [**Android Data Binding**](https://developer.android.com/topic/libraries/data-binding/index.html)
 
-* Written in [**Kotlin**](http://kotlinlang.org)
+- Written in [**Kotlin**](http://kotlinlang.org)
 
-* No need to write the ViewPager adapter
+- No need to write the ViewPager adapter
 
-* No need to modify your model classes
+- No need to modify your model classes
 
-* Supports multiple item view types
+- Supports multiple item view types
 
-* Optional Callbacks/Listeners
+- Optional Callbacks/Listeners
 
-* Efficient and easy API
+- Efficient and easy API
 
-* Tiny in size
+- Tiny in size
 
-* Support [**Kotlin**](http://kotlinlang.org) and [**Java**](https://www.java.com)
+- Support [**Kotlin**](http://kotlinlang.org) and [**Java**](https://www.java.com)
 
-* Support AndroidX
+- Support AndroidX
+
+- Support ViewPager2
 
   ​
 
   ## Setup
-  
+
   Migrate the project to AndroidX, do the following steps for migration
   Refactor -> Migrate to AndroidX
 
@@ -40,18 +44,19 @@
       }
   }
   ```
+
   Then, add the library to your module `build.gradle`
 
   ```
   // apply plugin: 'kotlin-kapt' // this line only for Kotlin projects
-  
+
   android {
       ...
       dataBinding.enabled true 
   }
-  
+
   dependencies {
-  	implementation 'com.github.VijayMakwana:EasyPagerAdapter:1.0.3'
+  	implementation 'com.github.VijayMakwana:EasyPagerAdapter:1.0.4'
   }
   ```
 
@@ -61,7 +66,7 @@
 
   ```xml
   <layout xmlns:android="http://schemas.android.com/apk/res/android">
-  
+
       <data>
           <variable name="item"
                     type="com.easypageradapter.easypageradaptersample.data.PersonDetail"/>
@@ -74,12 +79,14 @@
           
   </layout>
   ```
+
   ```kotlin     
   // Kotlin
   mBinding.viewPager.setEasyPagerAdapter(mPageList, BR.item)
                   .map<ImageModel>(R.layout.item_view_pager_image)
                   .map<PersonDetail>(R.layout.item_view_pager_person_detail_item)
   ```
+
   ```java
   // Java
   new EasyPagerAdapter(mPageList, BR.item)
@@ -104,6 +111,7 @@
                       }
                   }
   ```
+
   ```java
   // Java sample
   new EasyPagerAdapter(mPageList)
@@ -126,6 +134,7 @@
                           })
                   .into(mBinding.viewPager);
   ```
+
   ### **set fragment pager adapter**
 
   ```kotlin
@@ -139,6 +148,14 @@
    mBinding.viewPager.setEasyFragmentStatePagerAdapter
    (supportFragmentManager, listOf(FragmentA(), FragmentB()))
   ```
+
+  ### **set viewpager2 fragment state adapter**
+
+  ```kotlin
+  // ViewPager2
+  mBinding.viewPager2.setEasyFragmentStateAdapter(fragmmentActivity, listOf(FragmentA(), FragmentB(),FragmentC(), FragmentD()))
+  ```
+
   **Check out the wiki for detailed documentation and usage examples.**
 
   [Wiki](https://github.com/VijayMakwana/EasyPagerAdapter/wiki)
