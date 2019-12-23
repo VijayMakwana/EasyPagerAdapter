@@ -30,5 +30,8 @@ class MainActivity : AppCompatActivity() {
         mBinding.btnFragmentDemo.setOnClickListener {
             startActivity(Intent(this, FragmentPagerActivity::class.java))
         }
+        mBinding.btnViewPager2.setOnClickListener {
+            startActivity(Intent(this, ViewPager2Activity::class.java))
+        }
     }
 }

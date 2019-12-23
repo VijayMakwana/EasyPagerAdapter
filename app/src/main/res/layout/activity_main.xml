@@ -46,5 +46,13 @@
             android:layout_marginTop="16dp"
             android:text="Demo"
             android:textColor="@android:color/background_dark" />
+
+        <Button
+            android:id="@+id/btnViewPager2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="ViewPager2 Demo"
+            android:textColor="@android:color/background_dark" />
     </LinearLayout>
 </layout>
