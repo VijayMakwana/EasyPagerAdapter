@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/EasyPagerAdapter.iml" filepath="$PROJECT_DIR$/EasyPagerAdapter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/EasyPagerAdapter-app.iml" filepath="$PROJECT_DIR$/app/EasyPagerAdapter-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easypageradapter/EasyPagerAdapter-easypageradapter.iml" filepath="$PROJECT_DIR$/easypageradapter/EasyPagerAdapter-easypageradapter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android-EasyPagerAdapter.iml" filepath="$PROJECT_DIR$/android-EasyPagerAdapter.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/easypageradapter/easypageradapter.iml" filepath="$PROJECT_DIR$/easypageradapter/easypageradapter.iml" />
     </modules>
