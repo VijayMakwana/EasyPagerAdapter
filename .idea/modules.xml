@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/EasyPagerAdapter.iml" filepath="$PROJECT_DIR$/EasyPagerAdapter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/EasyPagerAdapter-app.iml" filepath="$PROJECT_DIR$/app/EasyPagerAdapter-app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/easypageradapter/EasyPagerAdapter-easypageradapter.iml" filepath="$PROJECT_DIR$/easypageradapter/EasyPagerAdapter-easypageradapter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android-EasyPagerAdapter.iml" filepath="$PROJECT_DIR$/android-EasyPagerAdapter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/easypageradapter/easypageradapter.iml" filepath="$PROJECT_DIR$/easypageradapter/easypageradapter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/EasyPagerAdapter.iml" filepath="$PROJECT_DIR$/.idea/modules/EasyPagerAdapter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/EasyPagerAdapter.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/EasyPagerAdapter.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/EasyPagerAdapter.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/EasyPagerAdapter.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/EasyPagerAdapter.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/EasyPagerAdapter.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/EasyPagerAdapter.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/EasyPagerAdapter.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/easypageradapter/EasyPagerAdapter.easypageradapter.iml" filepath="$PROJECT_DIR$/.idea/modules/easypageradapter/EasyPagerAdapter.easypageradapter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/easypageradapter/EasyPagerAdapter.easypageradapter.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/easypageradapter/EasyPagerAdapter.easypageradapter.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/easypageradapter/EasyPagerAdapter.easypageradapter.main.iml" filepath="$PROJECT_DIR$/.idea/modules/easypageradapter/EasyPagerAdapter.easypageradapter.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/easypageradapter/EasyPagerAdapter.easypageradapter.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/easypageradapter/EasyPagerAdapter.easypageradapter.unitTest.iml" />
     </modules>
   </component>
 </project>

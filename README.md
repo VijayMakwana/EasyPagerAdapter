@@ -1,5 +1,3 @@
-
-
 # EasyPagerAdapter [![](https://jitpack.io/v/VijayMakwana/EasyPagerAdapter.svg)](https://jitpack.io/#VijayMakwana/EasyPagerAdapter) [![License](https://img.shields.io/badge/License-Apache%202.0-orange.svg)](https://opensource.org/licenses/Apache-2.0)
 
 **Easiest android ViewPager adapter implementation, Don't write ViewPager adapter ever again**
@@ -11,6 +9,8 @@
 - No need to write the ViewPager adapter
 
 - No need to modify your model classes
+
+- Minimum API Level support 21
 
 - Supports multiple item view types
 
@@ -26,43 +26,45 @@
 
 - Support ViewPager2
 
-  ​
 
-  ## Setup
 
-  Migrate the project to AndroidX, do the following steps for migration
-  Refactor -> Migrate to AndroidX
+## Setup
 
-  ### Gradle
+Migrate the project to AndroidX, do the following steps for migration
+Refactor -> Migrate to AndroidX
 
-  Add this in your project level `build.gradle` file (**not** your module `build.gradle` file):
+### Gradle
+
+Add this in your project level `build.gradle` file (**not** your module `build.gradle` file):
 
   ```gradle
   allprojects {
-  	repositories {
+   repositories {
           maven { url "https://jitpack.io" } // add this line
       }
   }
   ```
 
-  Then, add the library to your module `build.gradle`
+Then, add the library to your module `build.gradle`
 
   ```
   // apply plugin: 'kotlin-kapt' // this line only for Kotlin projects
 
   android {
       ...
-      dataBinding.enabled true 
+      buildFeatures {
+        dataBinding true
+    	} 
   }
 
   dependencies {
-  	implementation 'com.github.VijayMakwana:EasyPagerAdapter:1.0.4'
+   implementation 'com.github.VijayMakwana:EasyPagerAdapter:1.1.0'
   }
   ```
 
-  ## Usage
+## Usage
 
-  Create your item layouts with `<layout>` as root:
+Create your item layouts with `<layout>` as root:
 
   ```xml
   <layout xmlns:android="http://schemas.android.com/apk/res/android">
@@ -95,14 +97,14 @@
                   .into(mBinding.viewPager);
   ```
 
-  ### If you want to attach callbacks or listeners then you can do like this
+### If you want to attach callbacks or listeners then you can do like this
 
   ```kotlin
   // Kotlin sample
        mBinding.viewPager.setEasyPagerAdapter(mPageList)
                   .map<ImageModel>(R.layout.item_view_pager_image, BR.item)
                   .map<PersonDetail, ItemViewPagerPersonDetailBinding>
-  			  (R.layout.item_view_pager_person_detail, BR.person)
+           (R.layout.item_view_pager_person_detail, BR.person)
                   { itemBind ->
                       itemBind.btnSubmit.setOnClickListener {
                        Toast.makeText(this@KotlinDemoActivity,
@@ -126,7 +128,7 @@
                          public void onClick(View view) {
                           Toast.makeText(JavaDemoActivity.this,
                            "Submit Button Clicked in the Person " + 
-  					   itemBind.getPerson().getName() +
+                  itemBind.getPerson().getName() +
                              " Page", Toast.LENGTH_LONG).show();
                                       }
                                   });
@@ -135,29 +137,29 @@
                   .into(mBinding.viewPager);
   ```
 
-  ### **set fragment pager adapter**
+### **set fragment pager adapter**
 
   ```kotlin
    mBinding.viewPager.setEasyFragmentPagerAdapter
    (supportFragmentManager, listOf(FragmentA(), FragmentB()))
   ```
 
-  ### **set fragment state pager adapter**
+### **set fragment state pager adapter**
 
   ```kotlin
    mBinding.viewPager.setEasyFragmentStatePagerAdapter
    (supportFragmentManager, listOf(FragmentA(), FragmentB()))
   ```
 
-  ### **set viewpager2 fragment state adapter**
+### **set viewpager2 fragment state adapter**
 
   ```kotlin
   // ViewPager2
   mBinding.viewPager2.setEasyFragmentStateAdapter(fragmmentActivity, listOf(FragmentA(), FragmentB(),FragmentC(), FragmentD()))
   ```
 
-  **Check out the wiki for detailed documentation and usage examples.**
+**Check out the wiki for detailed documentation and usage examples.**
 
-  [Wiki](https://github.com/VijayMakwana/EasyPagerAdapter/wiki)
+[Wiki](https://github.com/VijayMakwana/EasyPagerAdapter/wiki)
 
-  > Special thanks to [LastAdapter](https://github.com/nitrico/LastAdapter) by [@Miguel Ángel Moreno](https://github.com/nitrico) for inspiring this library
+> Special thanks to [LastAdapter](https://github.com/nitrico/LastAdapter) by [@Miguel Ángel Moreno](https://github.com/nitrico) for inspiring this library

@@ -19,13 +19,13 @@ class KotlinDemoActivity : AppCompatActivity() {
 
     private lateinit var mBinding: ActivityKotlinDemoBinding
 
-    private val mImageList = listOf<ImageModel>(
+    private val mImageList = listOf(
             ImageModel(R.drawable.image_1, "Android"),
             ImageModel(R.drawable.image_2, "Google Android"),
             ImageModel(R.drawable.image_3, "Happy Android"),
             ImageModel(R.drawable.image_4, "Noty Android"))
 
-    private val mPageList = listOf<Any>(
+    private val mPageList = listOf(
             ImageModel(
                     image = R.drawable.image_1,
                     name = "Android"),
